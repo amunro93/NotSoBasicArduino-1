@@ -17,12 +17,12 @@ void loop()
 	print();
 }
 
-int getdistance()
+int getdistance() //This is the setup of a function . It allows the user to reuse code easily.
 {
-	digitalWrite(trigpin, LOW);
-	delayMicroseconds(5);
+	digitalWrite(trigpin, LOW)// 
+	delayMicroseconds(5);// 5 microseconds delay 
 	digitalWrite(trigpin, HIGH);
-	delayMicroseconds(10);
+	delayMicroseconds(10);// 10 microseconds delay 
 	digitalWrite(trigpin, LOW);
 	pinMode(echopin, INPUT);
 	duration = pulseIn(echopin, HIGH);
@@ -33,8 +33,9 @@ int getdistance()
 
 void servo()
 {
-	inches = getdistance();
-	if (inches < 10)
+	inches = getdistance();// makes "inches" equal to what is returned from getdistance.
+	
+	if (inches < 10) // if it's less than 10 inches then servo stop 
 	{
 		myservo.write(90);
 	}
