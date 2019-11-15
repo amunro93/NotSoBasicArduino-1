@@ -5,7 +5,7 @@ long duration, cm, inches;
 Servo myservo;
 void setup()
 {
-	myservo.attach(5);
+	myservo.attach(5);// tells what pin the servo is attached to
 	Serial.begin(9600);
 	pinMode(trigpin, OUTPUT);
 	pinMode(echopin, INPUT);
@@ -13,7 +13,7 @@ void setup()
 
 void loop()
 {
-	servo();
+	servo();// add to servo function to void loop
 	print();
 }
 
@@ -39,17 +39,17 @@ void servo()
 	{
 		myservo.write(90);
 	}
-	if (inches > 10)
+	if (inches > 10)//if the # of inches is greater than 10 do this`
 	{
-		myservo.write(180);
+		myservo.write(180);// turn servo faster 
 	}
 }
 
 void print()
 {
-	Serial.print(inches);
+	Serial.print(inches);// gives the interval "inches"
 	Serial.print("in, ");
-	Serial.print(cm);
+	Serial.print(cm);;// gives the interval cm
 	Serial.print("cm");
 	Serial.println();
 	delay(250);
